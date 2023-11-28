@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
 // import App from './App.jsx'
 import './index.css'
@@ -7,7 +7,10 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
+import Products from './components/product/Products';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
 
 
 const router = createBrowserRouter([
@@ -16,8 +19,8 @@ const router = createBrowserRouter([
     element: <Navbar/>,
     children: [
       {
-        path: "/child",
-        element: <h1>I am a Child</h1>,
+        path: "/",
+        element: <Products/>,
       },
       {
         path: "/child2",
@@ -29,7 +32,7 @@ const router = createBrowserRouter([
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  <Provider store={store}>
     <RouterProvider router={router} />
-  </React.StrictMode>,
+  </Provider>,
 )
