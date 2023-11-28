@@ -19,7 +19,7 @@ export default function Navbar() {
                     <Link to={"/child2"}>About</Link>
                 </div>
                 <p >NAVBAR</p>
-                <button onClick={handleNavigate}>Cart</button>
+                <button style={{ cursor: 'pointer' }} onClick={handleNavigate}>Cart</button>
             </div>
             <div id="detail">
                 <Outlet />

@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import Products from './components/product/Products';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
+import Cart from './components/Cart/cart';
 
 
 const router = createBrowserRouter([
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <h1>I am Cart</h1>,
+        element: <Cart/>
       },
       {
         path: "/child2",

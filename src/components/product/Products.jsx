@@ -1,10 +1,26 @@
 // import React from 'react'
 import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { addToCart } from '../../features/productSlice'
+
 import './product.css'
 
 
 const Products = () => {
     const Products = useSelector(state => state.reducer.product)
+    const dispatch = useDispatch()
+
+    const toCart = (productId) => {
+        const abc = Products.filter((product)=>{
+            if(product.id == productId ){
+                console.log("filter called")
+                return product
+            }
+        })
+        dispatch(addToCart(abc))
+
+    }
+
     return (
         <>
             <div className='cards'>
@@ -14,7 +30,9 @@ const Products = () => {
                             {product.text}
                         </h1>
 
-                        <button>Add to Cart</button>
+                        <button onClick={() => {
+                            toCart(product.id)
+                        }}>Add to Cart</button>
                     </div>
                 ))}
             </div>
