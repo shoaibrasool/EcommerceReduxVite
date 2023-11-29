@@ -1,24 +1,26 @@
 // import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
-import { addToCart } from '../../features/productSlice'
+import { addToCart, addToInventory } from '../../features/productSlice'
 
 import './product.css'
 
 
 const Products = () => {
     const Products = useSelector(state => state.reducer.product)
+    const cart = useSelector(state => state.reducer.cart)
     const dispatch = useDispatch()
 
     const toCart = (productId) => {
-        const abc = Products.filter((product)=>{
-            if(product.id == productId ){
-                console.log("filter called")
-                return product
-            }
-        })
-        dispatch(addToCart(abc))
 
+        const clickedProd = Products.find((product) => product.id === productId);
+        const isProductInCart = cart.some((product) => product.id === clickedProd.id);
+
+        if (!isProductInCart) {
+            dispatch(addToCart(clickedProd));
+        } else {
+            dispatch(addToInventory(clickedProd));
+        }
     }
 
     return (
