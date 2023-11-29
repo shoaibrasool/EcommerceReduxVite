@@ -28,13 +28,13 @@ const Products = () => {
             <div className='cards'>
                 {Products.map((product) => (
                     <div className='card' key={product.id}>
-                        <h1>
-                            {product.text}
-                        </h1>
+                        <h1>{product.text}</h1>
 
                         <button onClick={() => {
                             toCart(product.id)
                         }}>Add to Cart</button>
+                        
+                        <h3>Unit Price{product.price}</h3>
                     </div>
                 ))}
             </div>

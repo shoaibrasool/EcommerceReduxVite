@@ -2,11 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     product: [
-        { id: 1, text: 'shampoo', inventory: 1 },
-        { id: 2, text: 'lux', inventory: 1 },
-        { id: 3, text: 'head and shoulder', inventory: 1 },
-        { id: 4, text: 'colgate', inventory: 1 },
-        { id: 5, text: 'empty', inventory: 1 },
+        { id: 1, text: 'shampoo', inventory: 1, price : 50 },
+        { id: 2, text: 'lux', inventory: 1, price : 20  },
+        { id: 3, text: 'head and shoulder', inventory: 1, price : 70  },
+        { id: 4, text: 'colgate', inventory: 1, price : 80  },
+        { id: 5, text: 'empty', inventory: 1, price : 60  },
     ],
     cart: [
     ]
