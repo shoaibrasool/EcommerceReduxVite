@@ -8,7 +8,7 @@ export default function Navbar() {
     const cart = useSelector(state => state.reducer.cart)
     let cartItems = 0;
 
-    cart.map(()=> {
+    cart.map(() => {
         cartItems++;
     })
 
@@ -22,10 +22,10 @@ export default function Navbar() {
         <>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '22px', backgroundColor: 'lightcoral', }}>
                 <div style={{ display: 'flex', gap: '10px' }}>
-                    <Link to={"/"}>Home</Link>
-                    <Link to={"/child2"}>About</Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to={"/"}>Home</Link>
+                    <Link style={{ textDecoration: 'none', color: 'black' }} to={"/child2"}>About</Link>
                 </div>
-                <p >NAVBAR</p>
+                <h1 >YourStore</h1>
                 <button style={{ cursor: 'pointer' }} onClick={handleNavigate}>Cart {cartItems}</button>
             </div>
             <div id="detail">
